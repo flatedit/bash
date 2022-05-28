@@ -14,11 +14,12 @@
 
 ## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/DOCS/ABOUT.md)
 
-creating documentation is not easy in hundreds of small projects, where are dpendencies
+creating documentation is not easy in hundreds of small projects, where are dependencies
 we need some simple tool to manage the documentation from the terminal, during programming
 
-this is the frlatedit:
+this is the FlatEdit:
 + file of projects list: readme.txt
+
 
 
 ## Documentation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/examples/edit/main/DOCS/DOCS.md)
@@ -29,7 +30,7 @@ we need some simple tool to manage the documentation from the terminal, during p
 this is the frlatedit:
 + file of projects list: readme.txt
 
-### documenttion dependencies
+### Dependencies
 
 projects list [**readme1.txt**](readme1.txt)
 ```
@@ -58,7 +59,9 @@ projects list [**readme2.txt**](readme2.txt)
 ```
 
 
-### Logs for working/existing
+### Logs 
+
+Show not- & working/existing files
 
 
 projects list [**readme3.txt**](readme3.txt)
