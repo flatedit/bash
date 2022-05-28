@@ -38,7 +38,7 @@ projects list [**readme1.txt**](readme1.txt)
 ../bash/DOCS/TODO.md
 ./DOCS/FOOT.md
 ```
-readme.sh
+[**readme.sh**](readme.sh)
 ```bash
 ./flatedit/readme.md readme1.txt
 ```
@@ -53,7 +53,7 @@ projects list [**readme2.txt**](readme2.txt)
 ../bash/DOCS/TODO.md
 ./DOCS/FOOT.md
 ```
-
+[**readme.sh**](readme.sh)
 ```bash
 ./flatedit/readme.md readme2.txt
 ```
@@ -70,7 +70,7 @@ projects list [**readme3.txt**](readme3.txt)
 ../bash/DOCS/TODO.md
 ./DOCS/FOOT.md
 ```
-
+[**readme.sh**](readme.sh)
 ```bash
 ./flatedit/readme.md readme3.txt
 ```
