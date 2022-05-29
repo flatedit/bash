@@ -1,4 +1,5 @@
 ./DOCS/MENU.md
 ./DOCS/ABOUT.md
+./DOCS/CONTRIBUTION.md
 ../examples/DOCS/DOCS.md
 ./DOCS/FOOT.md
