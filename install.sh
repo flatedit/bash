@@ -1,6 +1,6 @@
 curl https://raw.githubusercontent.com/apifork/bash/main/apifork.sh -o apifork
 ./apifork init
-curl https://raw.githubusercontent.com/flatedit/bash/main/readme.sh -o readme
+curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
 ./readme init
 curl https://raw.githubusercontent.com/apipackage/bash/main/apipackage.sh -o apipackage
 ./apipackage init
