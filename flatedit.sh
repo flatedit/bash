@@ -18,6 +18,8 @@ CONFIG_FILE=".${MODULE}"
 CONFIG_DEFAULT="${MODULE}${FILE_EXT}"
 CONFIG_DEV="${MODULE}.dev${FILE_EXT}"
 CONFIG_TEST="${MODULE}.test${FILE_EXT}"
+LOGS=".${MODULE}.logs${FILE_EXT}"
+#
 if [ "$CMD" == "-h" ] || [ "$CMD" == "--help" ]; then
   echo "set config for:"
   echo "init - the default config, for customers"
@@ -27,9 +29,15 @@ if [ "$CMD" == "-h" ] || [ "$CMD" == "--help" ]; then
   exit
 fi
 if [ "$CMD" == "init" ]; then
-  echo -n "$CONFIG_DEFAULT" > "$CONFIG_FILE"
+  echo -n "${CONFIG_DEFAULT}" > "${CONFIG_FILE}"
+  echo "${LOGS}" >> ".gitignore"
+  [ ! -f "${CONFIG_DEFAULT}" ] && echo -n "" > "${CONFIG_DEFAULT}"
+  PROJECT_LIST=$(cat ${CONFIG_DEFAULT})
+  #echo "${PROJECT_LIST}"
+  #[ ! -f "${PROJECT_LIST}" ] && echo -n "" > "${PROJECT_LIST}"
   exit
 fi
+#
 if [ "$CMD" == "dev" ]; then
   echo -n "$CONFIG_DEV" > "$CONFIG_FILE"
   exit
@@ -39,19 +47,19 @@ if [ "$CMD" == "test" ]; then
   exit
 fi
 #
+PROJECT_LIST=$(cat $CONFIG_DEFAULT)
+[ ! -f "${PROJECT_LIST}" ] && echo -n "" > "${PROJECT_LIST}"
+#
 DSL_HASH="#"
-LOGS=".${MODULE}.logs${FILE_EXT}"
 LOCAL_PATH=$(pwd)
 SUBFOLDER="DOCS"
 MENU_URL="$SUBFOLDER/PROJECTS.md"
 MENU_PATH="$SUBFOLDER/PROJECTS_LOCAL.md"
 OUTPUT="README.md"
-PROJECT_LIST=$(cat $CONFIG_DEFAULT)
 
 # START
 echo "`date +"%T.%3N"` START" > $LOGS
 echo "$(date +"%T.%3N") CREATE_MENU" >> $LOGS
-[ ! -f "$PROJECT_LIST" ] && echo -n "" > "$PROJECT_LIST" && echo "$LOGS" >> ".gitignore"
 #
 DOMAIN=$(cat CNAME)
 echo "+ [$DOMAIN](http://$DOMAIN)" > $MENU_URL
