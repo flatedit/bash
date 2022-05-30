@@ -9,19 +9,49 @@
 
 # TODO: github actions to merge the all files in the fly
 # CONFIG
+CMD=$1
+[ -z "$CMD" ] && CMD="install"
+#
+MODULE="flatedit"
+FILE_EXT=".txt"
+CONFIG_FILE=".${MODULE}"
+CONFIG_DEFAULT="${MODULE}${FILE_EXT}"
+CONFIG_DEV="${MODULE}.dev${FILE_EXT}"
+CONFIG_TEST="${MODULE}.test${FILE_EXT}"
+if [ "$CMD" == "-h" ] || [ "$CMD" == "--help" ]; then
+  echo "set config for:"
+  echo "init - the default config, for customers"
+  echo "dev - development packages, for contributors and developers"
+  echo "test - for testing the project"
+  echo ""
+  exit
+fi
+if [ "$CMD" == "init" ]; then
+  echo -n "$CONFIG_DEFAULT" > "$CONFIG_FILE"
+  exit
+fi
+if [ "$CMD" == "dev" ]; then
+  echo -n "$CONFIG_DEV" > "$CONFIG_FILE"
+  exit
+fi
+if [ "$CMD" == "test" ]; then
+  echo -n "$CONFIG_TEST" > "$CONFIG_FILE"
+  exit
+fi
+#
 DSL_HASH="#"
-LOGS="readme.logs.txt"
-PROJECT_FILE=readme.txt
-PROJECT_LIST=$(cat $PROJECT_FILE)
+LOGS=".${MODULE}.logs${FILE_EXT}"
 LOCAL_PATH=$(pwd)
 SUBFOLDER="DOCS"
 MENU_URL="$SUBFOLDER/PROJECTS.md"
 MENU_PATH="$SUBFOLDER/PROJECTS_LOCAL.md"
 OUTPUT="README.md"
+PROJECT_LIST=$(cat $CONFIG_DEFAULT)
 
 # START
 echo "`date +"%T.%3N"` START" > $LOGS
 echo "$(date +"%T.%3N") CREATE_MENU" >> $LOGS
+[ ! -f "$PROJECT_LIST" ] && echo -n "" > "$PROJECT_LIST" && echo "$LOGS" >> ".gitignore"
 #
 DOMAIN=$(cat CNAME)
 echo "+ [$DOMAIN](http://$DOMAIN)" > $MENU_URL
