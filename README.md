@@ -12,7 +12,8 @@
 
 
 
-## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/DOCS/ABOUT.md)
+## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/docs/edit/main/DOCS/ABOUT.md)
+
 
 creating documentation is not easy in hundreds of small projects, where are dependencies
 we need some simple tool to manage the documentation from the terminal, during programming
@@ -21,81 +22,10 @@ this is the FlatEdit:
 + file of projects list: readme.txt
 
 
+creating documentation is not easy in **hundreds** of projects, where are dependencies
+we need some simple tool to manage the documentation from the terminal, during programming
 
-## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/examples/edit/main/DOCS/CONTRIBUTION.md)
-
-
-Solutions for development:
-
-### Install
-
-Install dependencies after created project
-```bash
-curl https://raw.githubusercontent.com/apifork/bash/main/apifork.sh -o apifork
-echo "https://github.com/flatedit/bash.git flatedit" > "apifork.dev.txt"
-./apifork install apifork.dev.txt
-```
-
-
-Install package list after created project
-```bash
-curl https://raw.githubusercontent.com/apipackage/bash/main/apipackage.sh -o apipackage
-echo "https://github.com/letwhois/bash apidsl/apidsl/bash letwhois" >> "apipackage.txt"
-./apipackage install
-```
-
-Edit documentation with flatedit
-```bash
-echo "#!/bin/bash" > "readme"
-echo "./flatedit/readme.sh readme.txt" > "readme"
-echo "./DOCS/MENU.md" >> "readme.txt"
-echo "./DOCS/ABOUT.md" >> "readme.txt"
-echo "./DOCS/FOOT.md" >> "readme.txt"
-```
-
-### Update documentation
-
-```bash
- ./readme
-```
-
-### Config project file
-
-The config file: **.apifork** can be another, e.g. **apifork.txt**
-
-Just change the first line in  **.apifork** on **apifork.txt**
-```bash
-apifork.txt
-```
-
-
-
-### install
-
-[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
-
-```bash
-./apifork install
-```
-OR
-
-```bash
-./apifork
-```
-
-### update
-
-```bash
-./apifork update
-```
-
-
-### remove
-
-```bash
-./apifork remove
-```
-
+this is the **FlatEdit** to help You manage the content of many projects
 
 ## Documentation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/examples/edit/main/DOCS/DOCS.md)
 
@@ -149,6 +79,105 @@ projects list [**readme3.txt**](readme3.txt)
 ```bash
 ./flatedit/readme.md readme3.txt
 ```
+
+## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/DOCS/START.md)
+
+### Fast Install
+
+```bash
+curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
+./flatedit init
+```
+
+### Install dependencies after created project
+
+```bash
+curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
+echo "https://github.com/flatedit/bash.git flatedit" > "flatedit.dev.txt"
+./flatedit install flatedit.dev.txt
+```
+
+### install
+
+[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
+
+```bash
+./flatedit install
+```
+OR
+
+```bash
+./flatedit
+```
+
+### init
+
+```bash
+./flatedit init
+```
+
+### update
+
+```bash
+./flatedit update
+```
+
+
+### remove
+
+```bash
+./flatedit remove
+```
+
+
+## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/examples/edit/main/DOCS/CONTRIBUTION.md)
+
+
+Solutions for development:
+
+### Install
+
+Install dependencies after created project
+```bash
+curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
+echo "https://github.com/flatedit/bash.git flatedit" > "flatedit.dev.txt"
+./flatedit install flatedit.dev.txt
+```
+
+
+Install package list after created project
+```bash
+curl https://raw.githubusercontent.com/apipackage/bash/main/apipackage.sh -o apipackage
+echo "https://github.com/letwhois/bash apidsl/apidsl/bash letwhois" >> "apipackage.txt"
+./apipackage install
+```
+
+Edit documentation with flatedit
+```bash
+echo "#!/bin/bash" > "readme"
+echo "./flatedit/readme.sh readme.txt" > "readme"
+echo "./DOCS/MENU.md" >> "readme.txt"
+echo "./DOCS/ABOUT.md" >> "readme.txt"
+echo "./DOCS/FOOT.md" >> "readme.txt"
+```
+
+### Update documentation
+
+```bash
+ ./flatedit
+```
+
+### Config project file
+
+The config file: **.flatedit** can be another, e.g. **flatedit.txt**
+
+Just change the first line in  **.flatedit** on **flatedit.txt**
+```bash
+flatedit.txt
+```
+
+
+
 
 
 # Tags

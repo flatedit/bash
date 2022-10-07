@@ -8,9 +8,9 @@ Solutions for development:
 
 Install dependencies after created project
 ```bash
-curl https://raw.githubusercontent.com/apifork/bash/main/apifork.sh -o apifork
-echo "https://github.com/flatedit/bash.git flatedit" > "apifork.dev.txt"
-./apifork install apifork.dev.txt
+curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
+echo "https://github.com/flatedit/bash.git flatedit" > "flatedit.dev.txt"
+./flatedit install flatedit.dev.txt
 ```
 
 
@@ -33,42 +33,16 @@ echo "./DOCS/FOOT.md" >> "readme.txt"
 ### Update documentation
 
 ```bash
- ./readme
+ ./flatedit
 ```
 
 ### Config project file
 
-The config file: **.apifork** can be another, e.g. **apifork.txt**
+The config file: **.flatedit** can be another, e.g. **flatedit.txt**
 
-Just change the first line in  **.apifork** on **apifork.txt**
+Just change the first line in  **.flatedit** on **flatedit.txt**
 ```bash
-apifork.txt
+flatedit.txt
 ```
 
 
-
-### install
-
-[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
-
-```bash
-./apifork install
-```
-OR
-
-```bash
-./apifork
-```
-
-### update
-
-```bash
-./apifork update
-```
-
-
-### remove
-
-```bash
-./apifork remove
-```

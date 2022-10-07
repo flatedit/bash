@@ -2,6 +2,10 @@ DOCS/PROJECTS.md
 DOCS/PROJECTS_LOCAL.md
 readme.logs.txt
 .idea
+flatedit
+plainedit
+apifork
+apipackage
 # Logs
 logs
 *.log
@@ -107,12 +111,4 @@ dist
 # TernJS port file
 .tern-port
 flatedit/bash/letpath
-.flatedit.logs.txt
-.flatedit.logs.txt
-.flatedit.logs.txt
-.flatedit.logs.txt
-.flatedit.logs.txt
-.flatedit.logs.txt
-.flatedit.logs.txt
-.flatedit.logs.txt
 .flatedit.logs.txt
