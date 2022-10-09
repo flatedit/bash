@@ -46,7 +46,7 @@ fi
 ## UPDATE in SYSTEM flatedit.sh
 if [ "$CMD" == "update" ]; then
   #curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
-  curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh
+  curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit.sh
   sudo cp -f flatedit.sh /usr/local/bin/flatedit
   exit
 fi
