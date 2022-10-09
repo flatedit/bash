@@ -10,7 +10,7 @@
 # TODO: github actions to merge the all files in the fly
 # CONFIG
 CMD=$1
-[ -z "$CMD" ] && CMD="install"
+#[ -z "$CMD" ] && CMD="install"
 #
 MODULE="flatedit"
 FILE_EXT=".txt"
