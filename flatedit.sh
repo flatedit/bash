@@ -23,6 +23,8 @@ LOGS=".${MODULE}.logs${FILE_EXT}"
 if [ "$CMD" == "-h" ] || [ "$CMD" == "--help" ]; then
   echo "set config for:"
   echo "init - the default config, for customers"
+  echo "install - INSTALL  flatedit.sh in SYSTEM: /usr/local/bin/ "
+  echo "update - UPDATE  flatedit.sh in SYSTEM: /usr/local/bin/ "
   echo "dev - development packages, for contributors and developers"
   echo "test - for testing the project"
   echo ""
@@ -40,14 +42,14 @@ if [ "$CMD" == "init" ]; then
 fi
 ## INSTALL in SYSTEM flatedit.sh
 if [ "$CMD" == "install" ]; then
-  sudo cp -f flatedit.sh /usr/local/bin/flatedit
+  sudo cp -f ${MODULE}.sh /usr/local/bin/${MODULE}
   exit
 fi
 ## UPDATE in SYSTEM flatedit.sh
 if [ "$CMD" == "update" ]; then
   #curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
-  curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit.sh
-  sudo cp -f flatedit.sh /usr/local/bin/flatedit
+  curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o ${MODULE}.sh
+  sudo cp -f ${MODULE}.sh /usr/local/bin/${MODULE}
   exit
 fi
 #
