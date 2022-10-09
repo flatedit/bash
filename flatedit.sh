@@ -28,6 +28,7 @@ if [ "$CMD" == "-h" ] || [ "$CMD" == "--help" ]; then
   echo ""
   exit
 fi
+## INIT FILE flatedit.txt
 if [ "$CMD" == "init" ]; then
   echo -n "${CONFIG_DEFAULT}" > "${CONFIG_FILE}"
   echo "${LOGS}" >> ".gitignore"
@@ -35,6 +36,18 @@ if [ "$CMD" == "init" ]; then
   PROJECT_LIST=$(cat ${CONFIG_DEFAULT})
   #echo "${PROJECT_LIST}"
   #[ ! -f "${PROJECT_LIST}" ] && echo -n "" > "${PROJECT_LIST}"
+  exit
+fi
+## INSTALL in SYSTEM flatedit.sh
+if [ "$CMD" == "install" ]; then
+  sudo cp -f flatedit.sh /usr/local/bin/flatedit
+  exit
+fi
+## UPDATE in SYSTEM flatedit.sh
+if [ "$CMD" == "update" ]; then
+  #curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh -o flatedit
+  curl https://raw.githubusercontent.com/flatedit/bash/main/flatedit.sh
+  sudo cp -f flatedit.sh /usr/local/bin/flatedit
   exit
 fi
 #
