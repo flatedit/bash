@@ -1,5 +1,5 @@
 
-## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/DOCS/START.md)
+## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/MD/START.md)
 
 ### Fast Install
 

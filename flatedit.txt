@@ -1,6 +1,5 @@
-./DOCS/MENU.md
-../docs/DOCS/ABOUT.md
-#../examples/DOCS/DOCS.md
-./DOCS/START.md
-./DOCS/CONTRIBUTION.md
-./DOCS/FOOT.md
+./MD/MENU.md
+../docs/MD/ABOUT.md
+./MD/START.md
+./MD/CONTRIBUTION.md
+./MD/FOOT.md

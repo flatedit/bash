@@ -1,7 +1,7 @@
 
 ![logo.flatedit.com](https://logo.flatedit.com/1/cover.png)
 
-# [bash.flatedit.com](https://bash.flatedit.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/DOCS/MENU.md) 
+# [bash.flatedit.com](https://bash.flatedit.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/MD/MENU.md) 
 
 + [Strona informacyjna: www.flatedit.com](https://www.flatedit.com/)
 + [Dokumentacja - docs.flatedit.com](https://docs.flatedit.com/)
@@ -12,22 +12,8 @@
 
 
 
-## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/docs/edit/main/DOCS/ABOUT.md)
 
-
-creating documentation is not easy in hundreds of small projects, where are dependencies
-we need some simple tool to manage the documentation from the terminal, during programming
-
-this is the FlatEdit:
-+ file of projects list: readme.txt
-
-
-creating documentation is not easy in **hundreds** of projects, where are dependencies
-we need some simple tool to manage the documentation from the terminal, during programming
-
-this is the **FlatEdit** to help You manage the content of many projects
-
-## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/DOCS/START.md)
+## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/MD/START.md)
 
 ### Fast Install
 
@@ -77,7 +63,7 @@ OR
 ```
 
 
-## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/examples/edit/main/DOCS/CONTRIBUTION.md)
+## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/flatedit/bash/edit/main/MD/CONTRIBUTION.md)
 
 
 Solutions for development:
