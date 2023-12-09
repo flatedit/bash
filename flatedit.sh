@@ -2,10 +2,12 @@
 # CONTRIBUTION
 ## Author: Tom Sapletta
 ## Created Date: 11.05.2022
+## Updated Date: 09.12.2023
 
 
 # EXAMPLE
-# ./readme.sh
+# ./flatedit.sh init
+# flatedit
 
 # TODO: github actions to merge the all files in the fly
 # CONFIG
@@ -16,9 +18,11 @@ MODULE="flatedit"
 FILE_EXT=".txt"
 CONFIG_FILE=".${MODULE}"
 CONFIG_DEFAULT="${MODULE}${FILE_EXT}"
+CONFIG_CURRENT=$(less $CONFIG_FILE)
 CONFIG_DEV="${MODULE}.dev${FILE_EXT}"
 CONFIG_TEST="${MODULE}.test${FILE_EXT}"
 LOGS=".${MODULE}.logs${FILE_EXT}"
+
 #
 if [ "$CMD" == "-h" ] || [ "$CMD" == "--help" ]; then
   echo "set config for:"
@@ -35,7 +39,7 @@ if [ "$CMD" == "init" ]; then
   echo -n "${CONFIG_DEFAULT}" > "${CONFIG_FILE}"
   echo "${LOGS}" >> ".gitignore"
   [ ! -f "${CONFIG_DEFAULT}" ] && echo -n "" > "${CONFIG_DEFAULT}"
-  PROJECT_LIST=$(cat ${CONFIG_DEFAULT})
+  PROJECT_LIST=$(less ${CONFIG_DEFAULT})
   #echo "${PROJECT_LIST}"
   #[ ! -f "${PROJECT_LIST}" ] && echo -n "" > "${PROJECT_LIST}"
   exit
@@ -62,7 +66,10 @@ if [ "$CMD" == "test" ]; then
   exit
 fi
 #
-PROJECT_LIST=$(cat $CONFIG_DEFAULT)
+PROJECT_LIST=$(less ${CONFIG_CURRENT})
+echo $CONFIG_CURRENT
+#echo $PROJECT_LIST
+#exit
 [ ! -f "${PROJECT_LIST}" ] && echo -n "" > "${PROJECT_LIST}"
 #
 DSL_HASH="#"
@@ -81,11 +88,13 @@ OUTPUT="README.md"
 echo "`date +"%T.%3N"` START" > $LOGS
 echo "$(date +"%T.%3N") CREATE_MENU" >> $LOGS
 #
-DOMAIN=$(cat CNAME)
+DOMAIN="github.com"
+[ -f "$CNAME" ] && DOMAIN=$(less $CNAME)
 echo "+ [$DOMAIN](http://$DOMAIN)" > $MENU_URL
 echo "+ [$LOCAL_PATH](file://$LOCAL_PATH/)" > $MENU_PATH
 #
-for FILE in */in.md; do
+
+for FILE in $PROJECT_LIST; do
   line=$(head -n 1 $FILE)
   NAME=${FILE%%/*}
   URL=$DOMAIN/$NAME
@@ -96,14 +105,36 @@ done
 ## combine from another sites
 echo "$(date +"%T.%3N") COMBINE_FILES" >> $LOGS
 
+# Get the URL of the 'origin' remote
+remote_url=$(git config --get remote.origin.url)
+IFS=/ read -r user_or_org repo_name <<< "$remote_url"
+remote_url=${remote_url%.git}  # Remove '.git' from the end
+#remote_url=${remote_url#*:}    # Remove everything before ':'
+#remote_url=${remote_url#*/}    # Remove 'github.com/'
+echo remote_url
 echo "" > $OUTPUT
-for project in $PROJECT_LIST; do
+for FILE in $PROJECT_LIST; do
   # Remove Comments
-  [ "${project:0:1}" == "${DSL_HASH}" ] && continue
-  echo "$(date +"%T.%3N") COMBINE_FILE $project" >> $LOGS
-  cat $project >> $OUTPUT
+  #echo ${FILE:0:1}
+  #[ "${FILE:0:1}" == "${DSL_HASH}" ] && continue
+  echo "$(date +"%T.%3N") COMBINE_FILE $FILE" >> $LOGS
+  header_line_count=1
+  #FOLDER=$(basename $FILE)
+  # Read the header lines into the header variable
+  HEADER=$(head -n $header_line_count "$FILE")
+  # Read the rest of the file into the body variable, starting after the header
+  BODY=$(tail -n +$((header_line_count + 1)) "$FILE")
+  # Access the HEADER and BODY variables
+  # get first line from file
+  echo "${HEADER} [<span style='font-size:20px;'>&#x270D;</span>](${remote_url}/edit/main/${FILE})" >> $OUTPUT
+  echo "$BODY" >> $OUTPUT
+  #cat $FILE >> $OUTPUT
   echo "" >> $OUTPUT
 done
 
+echo "---" >> $OUTPUT
+echo "+ Modular Documentation made possible by the [FlatEdit](http://www.flatedit.com) project." >> $OUTPUT
+
 echo "`date +"%T.%3N"` STOP" >> $LOGS
 cat $LOGS
+
